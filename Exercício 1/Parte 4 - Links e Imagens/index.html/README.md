@@ -9,3 +9,5 @@ Uma imagem aparece "quebrada" no navegador quando o caminho especificado no atri
 Confirme se o arquivo da imagem foi realmente salvo na pasta 'img/' e se o nome não possui espaços
  4. **Atributo Alt:**
 Sempre use o atributo 'alt' para acessibilidade e para que um texto apareça caso a imagem falhe. 
+
+<img width="900" height="1200" alt="panico 7" src="https://github.com/user-attachments/assets/37b0cf49-ef52-448e-b2d2-d33bb6aff576" />
