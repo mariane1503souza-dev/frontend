@@ -1,28 +1,13 @@
-## Por que essa técnica é antiga?
+# Comparação entre Layout Antigo (Table-Based) e Layout Semântico Moderno
+## Adaptação para Layout Table-Based (retro.html)
+Para esta parte do exercício, adaptei a página temática de "Pânico 1" para um formato de layout baseado em tabelas, uma técnica comum para estruturar páginas web antes da popularização do CSS para layout. O arquivo retro.html demonstra essa abordagem.
+## Dificuldades encontradas na Adaptação:
+- **Complexidade do Código**: A estrutura HTML se torna muito mais aninhada e complexa, com várias tags "table", "tr" e "td" sendo usadas para fins de layout, e não para dados tabulares. Isso dificulta a leitura e a manutenção do código.
+- **Flexibilidade Limitada**: Atingir layouts responsivos ou designs complexos é extremamente difícil com tabelas. Ajustar espaçamentos, alinhamentos e a ordem dos elementos exige um grande número de células vazias ("td") e atributos de "colpsan / rowspan", tornando o design r[igido.
+- **Semântica Comprometida**: O uso de tabelas para layout desvirtua o propósito originaç da tag "table", que é apresentar dados tabulares. Isso confunde leitores de tela e motores de busca, que interpretam a estrutura como dados, e não como a organização visual da página.
+- **Acessibilidade Prejudicada**: Para usuários de tecnologias assistivas, a navegação em um layout baseado em tabelas pode ser confusa e ilógica, pois a ordem de leitura pode não corresponder à ordem visual esperada.
+- **Manutenção e Estilização**: Alterar o layout ou o estilo de uma página table-based é um processo demorado e propenso a erros, pois as regras de CSS precisam ser aplicadas a elementos de tabela de forma não intuitiva, e pequenas mudanças podem quebrar todo o layout.
+- **Performance**: O carregamento de páginas com layouts complexos baseados em tabelas pode ser mais lento, pois o navegador precisa renderizar toda a estrutura da tabela antes de exibir o conteúdo.
 
-Antigamente era comum utilizar tabelas para organizar todo o layout das páginas. Hoje essa prática não é recomendada, pois as tabelas foram criadas para exibir dados tabulares e não para estruturar páginas.
-
-## Dificuldades encontradas
-
-- Código mais extenso e difícil de entender.
-- Menor flexibilidade para alterar o layout.
-- Baixa responsividade em celulares.
-- Dificuldade de manutenção.
-- Menor acessibilidade.
-
-## Comparação com HTML semântico
-
-O HTML semântico utiliza elementos como `<header>`, `<nav>`, `<main>`, `<section>` e `<footer>`, tornando o código mais organizado, acessível e fácil de manter.
-
-Já o layout com tabelas mistura estrutura e apresentação, dificultando futuras alterações.
-
-## Comparação
-
-| Layout com tabela    | HTML semântico         |
-| -------------------- | ---------------------- |
-| Código maior         | Código mais organizado |
-| Difícil manutenção   | Fácil manutenção       |
-| Pouco responsivo     | Responsivo com CSS     |
-| Menor acessibilidade | Melhor acessibilidade  |
-| Técnica antiga       | Técnica moderna        |
-
+## Conclusão
+A transição do layout baseado em tabelas para o layout semântico com HTML5 e CSS representou um avanço significativo no desenvolvimento web. Embora as tabelas tenham sido uma solução prática em seu tempo, elas introduziram uma série de problemas de manutenção, flexibilidade, acessibilidade e semântica. A abordagem moderna, utilizando tags HTML com significado e estilização via CSS, resulta em um código mais limpo, mais acessível, mais fácil de manter e otimizado para os motores de busca, proporcionando uma experiência superior tanto para desenvolvedores quanto para usuários finais.
