@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pânico 1 - O Clássico do Terror</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', serif;
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d1b2e 50%, #1a1a1a 100%);
+            color: #e0e0e0;
+            line-height: 1.8;
+            min-height: 100vh;
+        }
+
+        /* Header Semântico */
+        header {
+            background: linear-gradient(180deg, rgba(0, 0, 0, 0.9) 0%, rgba(45, 27, 46, 0.8) 100%);
+            border-bottom: 3px solid #d32f2f;
+            padding: 40px 20px;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(211, 47, 47, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+
+        header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: repeating-linear-gradient(
+                0deg,
+                rgba(255, 0, 0, 0.03) 0px,
+                rgba(255, 0, 0, 0.03) 1px,
+                transparent 1px,
+                transparent 2px
+            );
+            pointer-events: none;
+        }
+
+        header h1 {
+            font-size: 3.5em;
+            color: #ff4444;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8), 0 0 10px rgba(211, 47, 47, 0.5);
+            letter-spacing: 2px;
+            margin-bottom: 10px;
+            position: relative;
+            z-index: 1;
+        }
+
+        header p {
+            color: #b0b0b0;
+            font-size: 1.1em;
+            font-style: italic;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Navegação Semântica */
+        nav {
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 0;
+            border-bottom: 2px solid #d32f2f;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        nav ul li {
+            margin: 0;
+        }
+
+        nav ul li a {
+            display: block;
+            padding: 15px 25px;
+            color: #e0e0e0;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            border-right: 1px solid rgba(211, 47, 47, 0.3);
+            position: relative;
+        }
+
+        nav ul li:last-child a {
+            border-right: none;
+        }
+
+        nav ul li a::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: #ff4444;
+            transition: width 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            background-color: rgba(211, 47, 47, 0.2);
+            color: #ff4444;
+        }
+
+        nav ul li a:hover::before {
+            width: 100%;
+        }
+
+        /* Main Semântico */
+        main {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        /* Sections Semânticas */
+        section {
+            background: rgba(45, 27, 46, 0.6);
+            border-left: 5px solid #d32f2f;
+            padding: 30px;
+            margin-bottom: 30px;
+            border-radius: 5px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+            transition: all 0.3s ease;
+        }
+
+        section:hover {
+            background: rgba(45, 27, 46, 0.8);
+            box-shadow: 0 6px 20px rgba(211, 47, 47, 0.2);
+        }
+
+        section h2 {
+            color: #ff4444;
+            font-size: 2em;
+            margin-bottom: 15px;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+            border-bottom: 2px solid rgba(211, 47, 47, 0.3);
+            padding-bottom: 10px;
+        }
+
+        section h3 {
+            color: #ff6666;
+            font-size: 1.5em;
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+
+        section p {
+            margin-bottom: 15px;
+            text-align: justify;
+            color: #d0d0d0;
+        }
+
+        section ul, section ol {
+            margin-left: 30px;
+            margin-bottom: 15px;
+        }
+
+        section li {
+            margin-bottom: 8px;
+            color: #d0d0d0;
+        }
+
+        section strong {
+            color: #ff4444;
+        }
+
+        /* Estilo para tabelas */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            background-color: rgba(0, 0, 0, 0.3);
+        }
+
+        table thead {
+            background-color: rgba(211, 47, 47, 0.3);
+        }
+
+        table th, table td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid rgba(211, 47, 47, 0.2);
+            color: #d0d0d0;
+        }
+
+        table th {
+            color: #ff4444;
+            font-weight: bold;
+        }
+
+        table tr:hover {
+            background-color: rgba(211, 47, 47, 0.1);
+        }
+
+        /* Footer */
+        footer {
+            background: linear-gradient(180deg, rgba(45, 27, 46, 0.8) 0%, rgba(0, 0, 0, 0.9) 100%);
+            border-top: 3px solid #d32f2f;
+            padding: 30px 20px;
+            text-align: center;
+            color: #b0b0b0;
+            margin-top: 50px;
+            box-shadow: 0 -4px 15px rgba(0, 0, 0, 0.5);
+        }
+
+        footer p {
+            margin-bottom: 10px;
+        }
+
+        footer a {
+            color: #ff4444;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        footer a:hover {
+            color: #ff6666;
+            text-decoration: underline;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2.5em;
+            }
+
+            nav ul {
+                flex-direction: column;
+            }
+
+            nav ul li a {
+                border-right: none;
+                border-bottom: 1px solid rgba(211, 47, 47, 0.3);
+            }
+
+            nav ul li:last-child a {
+                border-bottom: none;
+            }
+
+            section {
+                padding: 20px;
+            }
+
+            main {
+                margin: 20px auto;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Semântico -->
+    <header>
+        <h1>🔪 PÂNICO 1 🔪</h1>
+        <p>O Clássico do Terror que Revolucionou o Gênero</p>
+    </header>
+
+    <!-- Navegação Semântica -->
+    <nav>
+        <ul>
+            <li><a href="#sinopse">Sinopse</a></li>
+            <li><a href="#elenco">Elenco</a></li>
+            <li><a href="#producao">Produção</a></li>
+            <li><a href="#impacto">Impacto Cultural</a></li>
+            <li><a href="#curiosidades">Curiosidades</a></li>
+        </ul>
+    </nav>
+
+    <!-- Main Semântico -->
+    <main>
+
+        <!-- Section 1: Sinopse -->
+        <section id="sinopse">
+            <h2>Sinopse</h2>
+            <p>
+                <strong>Pânico</strong> (Scream, 1996) é um filme de terror e suspense dirigido por <strong>Wes Craven</strong> que marca um ponto de virada no gênero de horror. O filme acompanha um grupo de adolescentes em uma pequena cidade que se veem perseguidos por um misterioso assassino conhecido como <strong>Ghostface</strong>, que os aterroriza com ligações telefônicas e ataques brutais.
+            </p>
+            <p>
+                A trama começa com o assassinato de Casey Becker (Drew Barrymore) e se desenrola em torno de Sidney Prescott (Neve Campbell), que se torna o alvo principal do assassino. Enquanto a polícia local tenta desvendar o mistério, os adolescentes descobrem que o assassino parece estar obcecado por filmes de horror e usa referências cinematográficas para atormentá-los.
+            </p>
+            <p>
+                O que torna <strong>Pânico</strong> único é sua abordagem meta-narrativa: o filme não apenas é um filme de horror, mas também é sobre filmes de horror, criando uma camada adicional de suspense e humor que ressoa com o público.
+            </p>
+        </section>
+
+        <!-- Section 2: Elenco -->
+        <section id="elenco">
+            <h2>Elenco Principal</h2>
+            <p>O filme apresenta um elenco talentoso que ajudou a definir a geração de atores de horror dos anos 90:</p>
+            
+            <table>
+                <thead>
+                    <tr>
+                        <th>Ator/Atriz</th>
+                        <th>Personagem</th>
+                        <th>Descrição</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Neve Campbell</td>
+                        <td>Sidney Prescott</td>
+                        <td>Protagonista principal, alvo do assassino</td>
+                    </tr>
+                    <tr>
+                        <td>Drew Barrymore</td>
+                        <td>Casey Becker</td>
+                        <td>Primeira vítima do filme</td>
+                    </tr>
+                    <tr>
+                        <td>Courtney Cox</td>
+                        <td>Gale Weathers</td>
+                        <td>Repórter ambiciosa</td>
+                    </tr>
+                    <tr>
+                        <td>David Arquette</td>
+                        <td>Dewey Riley</td>
+                        <td>Policial cômico e bem-intencionado</td>
+                    </tr>
+                    <tr>
+                        <td>Skeet Ulrich</td>
+                        <td>Billy Loomis</td>
+                        <td>Namorado de Sidney</td>
+                    </tr>
+                    <tr>
+                        <td>Matthew Lillard</td>
+                        <td>Stu Macher</td>
+                        <td>Amigo de Billy</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <!-- Section 3: Produção -->
+        <section id="producao">
+            <h2>Produção e Direção</h2>
+            
+            <h3>Diretor: Wes Craven</h3>
+            <p>
+                <strong>Wes Craven</strong>, o lendário diretor de horror, trouxe sua visão criativa e conhecimento profundo do gênero para <strong>Pânico</strong>. Craven é conhecido por filmes como <strong>A Hora do Pesadelo</strong> (1984) e <strong>As Colinas Têm Olhos</strong> (1977), e sua experiência foi fundamental para o sucesso de Pânico.
+            </p>
+
+            <h3>Roteiro: Kevin Williamson</h3>
+            <p>
+                O roteiro foi escrito por <strong>Kevin Williamson</strong>, que criou uma narrativa inteligente e repleta de referências a filmes de horror clássicos. Williamson conseguiu equilibrar o suspense genuíno com momentos de humor, criando um filme que apela tanto aos fãs de horror quanto ao público em geral.
+            </p>
+
+            <h3>Detalhes de Produção</h3>
+            <ul>
+                <li><strong>Ano de Lançamento:</strong> 1996</li>
+                <li><strong>Orçamento:</strong> Aproximadamente $14 milhões</li>
+                <li><strong>Bilheteria:</strong> Mais de $173 milhões em todo o mundo</li>
+                <li><strong>Duração:</strong> 111 minutos</li>
+                <li><strong>Classificação:</strong> R (Restrito para menores de 17 anos)</li>
+            </ul>
+        </section>
+
+        <!-- Section 4: Impacto Cultural -->
+        <section id="impacto">
+            <h2>Impacto Cultural e Legado</h2>
+            
+            <h3>Revolução no Gênero de Horror</h3>
+            <p>
+                <strong>Pânico</strong> revitalizou o gênero de horror no final dos anos 90. Após uma década de filmes de horror de qualidade questionável, Craven e Williamson trouxeram inteligência, humor e autenticidade de volta ao gênero. O filme provou que filmes de horror podiam ser tanto assustadores quanto inteligentes.
+            </p>
+
+            <h3>Influência em Filmes Posteriores</h3>
+            <p>
+                O sucesso de <strong>Pânico</strong> inspirou uma onda de filmes de horror nos anos 2000, muitos dos quais tentavam replicar sua fórmula de meta-narrativa e humor. O filme estabeleceu o padrão para o que um filme de horror moderno poderia ser.
+            </p>
+
+            <h3>A Franquia</h3>
+            <p>
+                O sucesso de <strong>Pânico 1</strong> levou ao desenvolvimento de uma franquia bem-sucedida, com sequências lançadas em 1997, 2000, 2011 e 2022. Cada filme mantém a essência do original enquanto explora novos aspectos da história e do universo de Pânico.
+            </p>
+        </section>
+
+        <!-- Section 5: Curiosidades -->
+        <section id="curiosidades">
+            <h2>Curiosidades e Fatos Interessantes</h2>
+            
+            <h3>Referências a Filmes de Horror</h3>
+            <p>
+                O filme está repleto de referências a clássicos de horror, incluindo <strong>Halloween</strong> (1978), <strong>Psicose</strong> (1960) e <strong>A Hora do Pesadelo</strong> (1984). Essas referências não são apenas easter eggs, mas parte integral da trama.
+            </p>
+
+            <h3>A Cena de Abertura Memorável</h3>
+            <p>
+                A cena de abertura com Drew Barrymore é uma das mais memoráveis da história do cinema de horror. Muitos esperavam que ela fosse a protagonista do filme, o que torna sua morte no início ainda mais chocante.
+            </p>
+
+            <h3>Desenvolvimento da Máscara Ghostface</h3>
+            <p>
+                A máscara icônica do Ghostface foi originalmente baseada em uma máscara de Halloween comercial. A simplicidade do design tornou-a uma das máscaras de assassino mais reconhecíveis do cinema.
+            </p>
+
+            <h3>Sucesso de Bilheteria</h3>
+            <p>
+                Com um orçamento de apenas $14 milhões, <strong>Pânico</strong> arrecadou mais de $173 milhões em todo o mundo, tornando-o um dos maiores sucessos de bilheteria de 1996 e provando que filmes de horror podiam ser grandes sucessos comerciais.
+            </p>
+
+            <h3>Recepção Crítica</h3>
+            <p>
+                O filme foi aclamado pela crítica, com muitos elogiando sua abordagem inteligente ao gênero. Atualmente, possui uma classificação de 79% no Rotten Tomatoes e é considerado um clássico moderno do cinema de horror.
+            </p>
+        </section>
+
+    </main>
+
+    <!-- Footer Semântico -->
+    <footer>
+        <div style="max-width: 1200px; margin: 0 auto;">
+            <!-- Informações de Autoria -->
+            <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid rgba(211, 47, 47, 0.3);">
+                <h3 style="color: #ff4444; margin-bottom: 10px; font-size: 1.1em;">Autoria e Contato</h3>
+                <p>
+                    <strong>Desenvolvido por:</strong> Laís Fernanda e Mariane de Morais<br>
+                    <strong>Email:</strong> <a href="mailto:laisfernandaalves12345@gmail.com" style="color: #ff4444; text-decoration: none;">laisfernandaalves12345@gmail.com</a><br>
+                    <strong>Instituição:</strong> Grau Técnico 
+                </p>
+            </div>
+
+            <!-- Links de Apoio -->
+            <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid rgba(211, 47, 47, 0.3);">
+                <h3 style="color: #ff4444; margin-bottom: 10px; font-size: 1.1em;">Links de Apoio</h3>
+                <ul style="list-style: none; padding: 0; margin: 0;">
+                    <li style="margin-bottom: 8px;">
+                        <a href="https://www.imdb.com/title/tt0117571/" target="_blank" style="color: #ff4444; text-decoration: none; transition: color 0.3s ease;">📽️ Saiba mais sobre Pânico 1 no IMDb</a>
+                    </li>
+                    <li style="margin-bottom: 8px;">
+                        <a href="https://www.w3schools.com/html/html5_semantic_elements.asp" target="_blank" style="color: #ff4444; text-decoration: none; transition: color 0.3s ease;">📚 Aprenda mais sobre HTML Semântico</a>
+                    </li>
+                    <li>
+                        <a href="#sinopse" style="color: #ff4444; text-decoration: none; transition: color 0.3s ease;">⬆️ Voltar ao Topo</a>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Copyright e Informações Finais -->
+            <div style="text-align: center;">
+                <p style="margin-bottom: 10px;">&copy; 2026 Página Temática - Pânico 1 (1996)</p>
+                <p style="margin-bottom: 10px; color: #b0b0b0;">Desenvolvido como exercício de HTML semântico e estruturação de páginas web</p>
+                <p style="margin-top: 15px; font-size: 0.9em; color: #888; font-style: italic;">
+                    "Qual é o seu filme de horror favorito?" - Ghostface
+                </p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
