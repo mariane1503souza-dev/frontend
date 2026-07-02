@@ -1,1 +1,498 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário de Contato - Pânico 1</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
+        body {
+            font-family: 'Georgia', serif;
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d1b2e 50%, #1a1a1a 100%);
+            color: #e0e0e0;
+            line-height: 1.8;
+            min-height: 100vh;
+        }
+
+        /* Header Semântico */
+        header {
+            background: linear-gradient(180deg, rgba(0, 0, 0, 0.9) 0%, rgba(45, 27, 46, 0.8) 100%);
+            border-bottom: 3px solid #d32f2f;
+            padding: 40px 20px;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(211, 47, 47, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+
+        header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: repeating-linear-gradient(
+                0deg,
+                rgba(255, 0, 0, 0.03) 0px,
+                rgba(255, 0, 0, 0.03) 1px,
+                transparent 1px,
+                transparent 2px
+            );
+            pointer-events: none;
+        }
+
+        header h1 {
+            font-size: 3.5em;
+            color: #ff4444;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8), 0 0 10px rgba(211, 47, 47, 0.5);
+            letter-spacing: 2px;
+            margin-bottom: 10px;
+            position: relative;
+            z-index: 1;
+        }
+
+        header p {
+            color: #b0b0b0;
+            font-size: 1.1em;
+            font-style: italic;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Navegação Semântica */
+        nav {
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 0;
+            border-bottom: 2px solid #d32f2f;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        nav ul li {
+            margin: 0;
+        }
+
+        nav ul li a {
+            display: block;
+            padding: 15px 25px;
+            color: #e0e0e0;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            border-right: 1px solid rgba(211, 47, 47, 0.3);
+            position: relative;
+        }
+
+        nav ul li:last-child a {
+            border-right: none;
+        }
+
+        nav ul li a::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: #ff4444;
+            transition: width 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            background-color: rgba(211, 47, 47, 0.2);
+            color: #ff4444;
+        }
+
+        nav ul li a:hover::before {
+            width: 100%;
+        }
+
+        /* Main Semântico */
+        main {
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        /* Section Semântica */
+        section {
+            background: rgba(45, 27, 46, 0.6);
+            border-left: 5px solid #d32f2f;
+            padding: 40px;
+            border-radius: 5px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+        }
+
+        section h2 {
+            color: #ff4444;
+            font-size: 2.5em;
+            margin-bottom: 30px;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+            text-align: center;
+        }
+
+        /* Formulário */
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        label {
+            color: #ff4444;
+            font-weight: bold;
+            margin-bottom: 8px;
+            font-size: 1.1em;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="tel"],
+        select,
+        textarea {
+            padding: 12px 15px;
+            background-color: rgba(0, 0, 0, 0.5);
+            border: 2px solid rgba(211, 47, 47, 0.5);
+            color: #e0e0e0;
+            font-family: 'Georgia', serif;
+            font-size: 1em;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+        }
+
+        input[type="text"]:focus,
+        input[type="email"]:focus,
+        input[type="tel"]:focus,
+        select:focus,
+        textarea:focus {
+            outline: none;
+            border-color: #ff4444;
+            background-color: rgba(0, 0, 0, 0.7);
+            box-shadow: 0 0 10px rgba(211, 47, 47, 0.3);
+        }
+
+        input[type="text"]::placeholder,
+        input[type="email"]::placeholder,
+        input[type="tel"]::placeholder,
+        textarea::placeholder {
+            color: #888;
+        }
+
+        select {
+            cursor: pointer;
+            appearance: none;
+            background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23ff4444' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+            background-repeat: no-repeat;
+            background-position: right 10px center;
+            background-size: 20px;
+            padding-right: 40px;
+        }
+
+        textarea {
+            resize: vertical;
+            min-height: 150px;
+            font-family: 'Georgia', serif;
+        }
+
+        /* Botões */
+        .button-group {
+            display: flex;
+            gap: 15px;
+            margin-top: 30px;
+            justify-content: center;
+        }
+
+        button {
+            padding: 12px 30px;
+            font-size: 1.1em;
+            font-weight: bold;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        button[type="submit"] {
+            background-color: #d32f2f;
+            color: #fff;
+            box-shadow: 0 4px 15px rgba(211, 47, 47, 0.3);
+        }
+
+        button[type="submit"]:hover {
+            background-color: #ff4444;
+            box-shadow: 0 6px 20px rgba(211, 47, 47, 0.5);
+            transform: translateY(-2px);
+        }
+
+        button[type="reset"] {
+            background-color: rgba(211, 47, 47, 0.3);
+            color: #ff4444;
+            border: 2px solid #ff4444;
+        }
+
+        button[type="reset"]:hover {
+            background-color: rgba(211, 47, 47, 0.5);
+            box-shadow: 0 4px 10px rgba(211, 47, 47, 0.3);
+        }
+
+        a.btn-voltar {
+            display: inline-block;
+            padding: 12px 30px;
+            background-color: rgba(211, 47, 47, 0.2);
+            color: #ff4444;
+            text-decoration: none;
+            border: 2px solid #ff4444;
+            border-radius: 4px;
+            text-align: center;
+            transition: all 0.3s ease;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        a.btn-voltar:hover {
+            background-color: rgba(211, 47, 47, 0.3);
+            box-shadow: 0 4px 10px rgba(211, 47, 47, 0.3);
+        }
+
+        /* Mensagem de sucesso */
+        .success-message {
+            display: none;
+            background-color: rgba(76, 175, 80, 0.2);
+            border-left: 5px solid #4caf50;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 4px;
+            color: #4caf50;
+            text-align: center;
+        }
+
+        /* Footer */
+        footer {
+            background: linear-gradient(180deg, rgba(45, 27, 46, 0.8) 0%, rgba(0, 0, 0, 0.9) 100%);
+            border-top: 3px solid #d32f2f;
+            padding: 30px 20px;
+            text-align: center;
+            color: #b0b0b0;
+            margin-top: 50px;
+            box-shadow: 0 -4px 15px rgba(0, 0, 0, 0.5);
+        }
+
+        footer p {
+            margin-bottom: 10px;
+        }
+
+        footer a {
+            color: #ff4444;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        footer a:hover {
+            color: #ff6666;
+            text-decoration: underline;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2.5em;
+            }
+
+            nav ul {
+                flex-direction: column;
+            }
+
+            nav ul li a {
+                border-right: none;
+                border-bottom: 1px solid rgba(211, 47, 47, 0.3);
+            }
+
+            nav ul li:last-child a {
+                border-bottom: none;
+            }
+
+            section {
+                padding: 20px;
+            }
+
+            .button-group {
+                flex-direction: column;
+            }
+
+            button, a.btn-voltar {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Semântico -->
+    <header>
+        <h1>🔪 PÂNICO 1 🔪</h1>
+        <p>Formulário de Contato</p>
+    </header>
+
+    <!-- Navegação Semântica -->
+    <nav>
+        <ul>
+            <li><a href="panico1.html">Voltar ao Filme</a></li>
+            <li><a href="#formulario">Formulário</a></li>
+            <li><a href="#contato">Contato</a></li>
+        </ul>
+    </nav>
+
+    <!-- Main Semântico -->
+    <main>
+
+        <!-- Section Semântica -->
+        <section id="formulario">
+            <h2>Entre em Contato Conosco</h2>
+            
+            <div class="success-message" id="successMessage">
+                ✓ Mensagem enviada com sucesso! Obrigado por entrar em contato.
+            </div>
+
+            <form action="/action_page.php" method="POST" id="contactForm">
+                
+                <!-- Campo: Nome -->
+                <div class="form-group">
+                    <label for="fname">Nome Completo *</label>
+                    <input 
+                        type="text" 
+                        id="fname" 
+                        name="fname" 
+                        placeholder="Digite seu nome completo"
+                        required
+                    >
+                </div>
+
+                <!-- Campo: Email -->
+                <div class="form-group">
+                    <label for="email">Email *</label>
+                    <input 
+                        type="email" 
+                        id="email" 
+                        name="email" 
+                        placeholder="seu.email@exemplo.com"
+                        required
+                    >
+                </div>
+
+                <!-- Campo: Telefone -->
+                <div class="form-group">
+                    <label for="phone">Telefone</label>
+                    <input 
+                        type="tel" 
+                        id="phone" 
+                        name="phone" 
+                        placeholder="(XX) XXXXX-XXXX"
+                    >
+                </div>
+
+                <!-- Campo: Assunto (Select) -->
+                <div class="form-group">
+                    <label for="subject">Assunto *</label>
+                    <select id="subject" name="subject" required>
+                        <option value="">-- Selecione um assunto --</option>
+                        <option value="duvida">Dúvida sobre o filme</option>
+                        <option value="critica">Crítica ou sugestão</option>
+                        <option value="informacao">Solicitação de informação</option>
+                        <option value="parceria">Proposta de parceria</option>
+                        <option value="outro">Outro</option>
+                    </select>
+                </div>
+
+                <!-- Campo: Mensagem (Textarea) -->
+                <div class="form-group">
+                    <label for="message">Mensagem *</label>
+                    <textarea 
+                        id="message" 
+                        name="message" 
+                        placeholder="Digite sua mensagem aqui... (mínimo 10 caracteres)"
+                        minlength="10"
+                        required
+                    ></textarea>
+                </div>
+
+                <!-- Botões -->
+                <div class="button-group">
+                    <button type="submit">Enviar Mensagem</button>
+                    <button type="reset">Limpar Formulário</button>
+                </div>
+
+            </form>
+
+            <div style="text-align: center; margin-top: 30px;">
+                <a href="panico1.html" class="btn-voltar">← Voltar à Página Principal</a>
+            </div>
+
+        </section>
+
+    </main>
+
+    <!-- Footer Semântico -->
+    <footer>
+        <div style="max-width: 1200px; margin: 0 auto;">
+            <p>&copy; 2026 Página Temática - Pânico 1 (1996)</p>
+            <p style="color: #b0b0b0;">Desenvolvido como exercício de HTML semântico e formulários web</p>
+            <p style="margin-top: 15px; font-size: 0.9em; color: #888; font-style: italic;">
+                "Qual é o seu filme de horror favorito?" - Ghostface
+            </p>
+        </div>
+    </footer>
+
+    <!-- Script para simular envio do formulário -->
+    <script>
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Validar campos
+            const name = document.getElementById('fname').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const subject = document.getElementById('subject').value;
+            const message = document.getElementById('message').value.trim();
+            
+            if (name && email && subject && message) {
+                // Mostrar mensagem de sucesso
+                document.getElementById('successMessage').style.display = 'block';
+                
+                // Limpar formulário
+                this.reset();
+                
+                // Esconder mensagem após 5 segundos
+                setTimeout(function() {
+                    document.getElementById('successMessage').style.display = 'none';
+                }, 5000);
+            }
+        });
+    </script>
+
+</body>
+</html>
