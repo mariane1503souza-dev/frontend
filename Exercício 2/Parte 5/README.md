@@ -1,4 +1,6 @@
 # Comparação entre Layout Antigo (Table-Based) e Layout Semântico Moderno
+## Porque essa técnica é antiga?
+O layout baseado em tabelas surgiu nos anos 90, quando o CSS ainda era limitado. Os desenvolvedores "forçavam" o uso da tag "table" para organizar o design visual (colunas, menus, etc.), o que era sua função original. Com a chegada de HTML5 e de ferramentas modernas como **Flexbox** e **Grid**, essa técnica tornou-se obsoleta, pois agora conseguimos separar totalmente a estrutura do conteúdo da sua aparência, garantindo sites mais rápidos, acessíveis e fáceis de manter.
 ## Adaptação para Layout Table-Based (retro.html)
 Para esta parte do exercício, adaptei a página temática de "Pânico 1" para um formato de layout baseado em tabelas, uma técnica comum para estruturar páginas web antes da popularização do CSS para layout. O arquivo retro.html demonstra essa abordagem.
 ## Dificuldades encontradas na Adaptação:
