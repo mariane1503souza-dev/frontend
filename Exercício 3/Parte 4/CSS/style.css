@@ -1,1 +1,185 @@
+/* 
+   IDENTIDADE VISUAL & TIPOGRAFIA (Tarefa 1, 2 e 3)
+   - Fonte: Poppins (Google Fonts)
+   - Cor Principal: #2ecc71 (Verde Esmeralda)
+   - Cor de Destaque: #f1c40f (Amarelo Girassol)
+   - Cor de Fundo Clara: #f9fbf9
+   - Cor Escura para Textos: #2c3e50
+*/
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #f9fbf9;
+    color: #2c3e50;
+    font-family: 'Poppins', sans-serif; /* Aplicação da fonte no body (Tarefa 3) */
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    font-weight: 400;
+}
+
+#inicio h2 {
+    font-size: 3rem; /* Tamanho aumentado para destaque */
+    font-weight: 700; /* Peso forte */
+    margin-bottom: 20px;
+    line-height: 1.2;
+}
+
+.secao h2 {
+    font-size: 2.2rem;
+    font-weight: 600;
+    margin-bottom: 25px;
+    position: relative;
+    display: inline-block;
+}
+
+.secao h2::after {
+    content: '';
+    display: block;
+    width: 50px;
+    height: 4px;
+    background-color: #2ecc71;
+    margin-top: 10px;
+}
+
+p {
+    font-size: 1.1rem;
+    font-weight: 300;
+    margin-bottom: 15px;
+    color: #34495e;
+}
+
+nav ul li a {
+    font-size: 1rem;
+    font-weight: 600; /* Peso semi-bold para links */
+    color: #2c3e50;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.botao-principal {
+    font-size: 1rem;
+    font-weight: 700; /* Peso extra-bold para botões */
+    display: inline-block;
+    background-color: #2ecc71;
+    color: white;
+    padding: 18px 40px;
+    text-decoration: none;
+    border-radius: 50px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(46, 204, 113, 0.3);
+}
+
+
+.container {
+    max-width: 1200px; /* Ajuste na largura do container */
+    margin: 0 auto;
+    padding: 0 30px;
+}
+
+.secao {
+    padding: 100px 0; /* Espaçamentos generosos para conforto visual */
+}
+
+header {
+    background-color: #ffffff;
+    padding: 25px 0;
+    box-shadow: 0 2px 15px rgba(0,0,0,0.03);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header h1 {
+    color: #2ecc71;
+    margin: 0;
+    font-size: 1.8rem;
+    font-weight: 700;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+nav ul li {
+    margin-left: 35px;
+}
+
+nav ul li a:hover {
+    color: #2ecc71;
+}
+
+#inicio {
+    background: linear-gradient(135deg, #f1c40f 0%, #f39c12 100%);
+    color: #2c3e50;
+    text-align: center;
+    padding: 140px 0;
+}
+
+#inicio p {
+    font-size: 1.3rem;
+    margin-bottom: 40px;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.cards-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin: 0 -15px;
+}
+
+.card {
+    background-color: #ffffff;
+    padding: 50px 35px;
+    border-radius: 15px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.04);
+    flex: 1;
+    min-width: 300px;
+    margin: 15px;
+    text-align: center;
+    transition: all 0.3s ease;
+    border: 1px solid #f0f4f0;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+}
+
+.card h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #2ecc71;
+    margin-bottom: 20px;
+}
+
+footer {
+    background-color: #2c3e50;
+    color: #ecf0f1;
+    padding: 60px 0;
+    text-align: center;
+}
+
+footer p {
+    color: #bdc3c7;
+    font-size: 1rem;
+    font-weight: 400;
+}
 
