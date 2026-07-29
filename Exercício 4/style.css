@@ -22,14 +22,14 @@ nav ul {
     gap: 20px;
 }
 
-nav ul li {
-    /* display: inline; */
-    /* margin: 0 10px; */
-}
-
 nav ul li a {
     color: #fff;
     text-decoration: none;
+}
+
+nav ul li a:hover {
+    text-decoration: underline;
+    color: #007bff;
 }
 
 main {
@@ -70,7 +70,6 @@ footer {
     background-color: #0056b3;
 }
 
-
 .product-gallery {
     display: flex;
     flex-wrap: wrap;
@@ -90,6 +89,12 @@ footer {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    transition: all 0.3s ease;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .product-card h3 {
@@ -110,11 +115,10 @@ footer {
 }
 
 .product-card .button {
-    margin-top: auto; /* Empurra o botão para o final do card */
+    margin-top: auto;
     width: 100%;
     box-sizing: border-box;
 }
-
 
 .product-detail {
     padding: 20px;
@@ -143,10 +147,6 @@ footer {
     margin-bottom: 20px;
 }
 
-.product-detail ul li {
-    margin-bottom: 5px;
-}
-
 .contact-section {
     padding: 20px;
     max-width: 800px;
@@ -160,20 +160,6 @@ footer {
     color: #333;
     margin-top: 0;
     text-align: center;
-}
-
-.contact-section p {
-    text-align: center;
-    margin-bottom: 20px;
-}
-
-.contact-info {
-    text-align: center;
-    margin-bottom: 30px;
-}
-
-.contact-info p {
-    margin: 5px 0;
 }
 
 .contact-form {
@@ -198,25 +184,9 @@ footer {
     box-sizing: border-box;
 }
 
-.form-group textarea {
-    resize: vertical;
-}
-
 .contact-form .button {
     align-self: center;
     width: auto;
     padding: 10px 30px;
-}
-
-
-nav ul li a:hover {
-    text-decoration: underline;
-    color: #007bff;
-}
-
-.product-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    transition: all 0.3s ease;
 }
 
