@@ -1,1 +1,67 @@
+/* TAREFA 4: Personalização da aparência apenas no arquivo externo */
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f8f9fa;
+}
+
+/* Cores Temáticas Pânico 6 */
+h1, h2, h3, h4, h5 {
+    color: #dc3545; /* Vermelho Pânico */
+    font-weight: bold;
+}
+
+.bg-dark {
+    background-color: #0d1117 !important; /* Preto Sombrio */
+}
+
+/* Estilização do Hero */
+.hero-section {
+    border-bottom: 5px solid #dc3545;
+}
+
+.hero-section h1 {
+    color: #ffffff;
+}
+
+/* Estilização dos Cards (Features) */
+.feature-card {
+    border: 1px solid #dee2e6;
+    transition: all 0.3s ease;
+}
+
+.feature-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(220, 53, 69, 0.2);
+    border-color: #dc3545;
+}
+
+/* Botões Customizados */
+.btn-danger {
+    background-color: #dc3545;
+    border: none;
+    padding: 10px 30px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.btn-danger:hover {
+    background-color: #a71d2a;
+}
+
+.btn-outline-danger:hover {
+    background-color: #dc3545;
+    color: white;
+}
+
+/* Ajustes de Responsividade do Mundo Real */
+@media (max-width: 768px) {
+    .hero-section {
+        text-align: center;
+    }
+    
+    .display-4 {
+        font-size: 2.5rem;
+    }
+}
 
