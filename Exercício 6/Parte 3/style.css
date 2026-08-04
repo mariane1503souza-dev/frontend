@@ -1,0 +1,339 @@
+/* Estilos personalizados para o projeto MercadoTech - Pânico 6 Edition */
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f8f9fa;
+    color: #343a40;
+}
+
+.header {
+    background-color: #212529;
+    color: #ffffff;
+    padding: 20px 0;
+}
+
+h1, h2 {
+    color: #dc3545; /* Vermelho de perigo */
+}
+
+.btn-danger {
+    background-color: #dc3545;
+    border-color: #dc3545;
+}
+
+.btn-danger:hover {
+    background-color: #c82333;
+    border-color: #bd2130;
+}
+
+.footer {
+    background-color: #212529;
+    color: #ffffff;
+    padding: 15px 0;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+/* Estilos para a seção Hero */
+.hero-section {
+    background-image: url('https://via.placeholder.com/1500x500/000000/FFFFFF?text=Pânico+6+Fundo+Aterrorizante'); /* Imagem de fundo temática */
+    background-size: cover;
+    background-position: center;
+    min-height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.6); /* Overlay escuro para melhor leitura do texto */
+    z-index: 1;
+}
+
+.hero-section .container {
+    z-index: 2;
+}
+
+.hero-section h2 {
+    color: #dc3545; /* Vermelho de destaque */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+.hero-section p {
+    color: #f8f9fa;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+}
+
+/* Estilos para os cards de categoria */
+.category-card {
+    border: 1px solid #dc3545;
+    transition: transform 0.3s ease-in-out;
+}
+
+.category-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 8px rgba(220, 53, 69, 0.4);
+}
+
+.category-card .card-title {
+    color: #dc3545;
+}
+
+/* Estilos para os cards de destaque */
+.highlight-card {
+    border: 1px solid #6c757d;
+    transition: transform 0.3s ease-in-out;
+}
+
+.highlight-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 8px rgba(108, 117, 125, 0.4);
+}
+
+.highlight-card .card-title {
+    color: #dc3545;
+}
+
+.highlight-card img {
+    border-bottom: 1px solid #6c757d;
+}
+
+/* Ajustes gerais */
+main .container {
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.mb-4 {
+    margin-bottom: 1.5rem !important;
+}
+
+.mt-3 {
+    margin-top: 1rem !important;
+}
+
+.py-5 {
+    padding-top: 3rem !important;
+    padding-bottom: 3rem !important;
+}
+
+.my-5 {
+    margin-top: 3rem !important;
+    margin-bottom: 3rem !important;
+}
+
+.bg-dark {
+    background-color: #212529 !important;
+}
+
+.text-white {
+    color: #ffffff !important;
+}
+
+.btn-outline-danger {
+    color: #dc3545;
+    border-color: #dc3545;
+}
+
+.btn-outline-danger:hover {
+    color: #fff;
+    background-color: #dc3545;
+    border-color: #dc3545;
+}
+
+
+/* Estilos para os cards de produtos */
+.product-card {
+    border: 1px solid #dc3545;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    height: 100%;
+}
+
+.product-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 16px rgba(220, 53, 69, 0.5);
+}
+
+.product-card .card-title {
+    color: #dc3545;
+    font-weight: bold;
+}
+
+.product-card .card-img-top {
+    border-bottom: 2px solid #dc3545;
+}
+
+/* Estilos para formulários */
+.contact-form {
+    background-color: #f8f9fa;
+    padding: 20px;
+    border-radius: 8px;
+    border-left: 4px solid #dc3545;
+}
+
+.form-control,
+.form-select {
+    border: 1px solid #6c757d;
+    border-radius: 4px;
+}
+
+.form-control:focus,
+.form-select:focus {
+    border-color: #dc3545;
+    box-shadow: 0 0 0 0.2rem rgba(220, 53, 69, 0.25);
+}
+
+.form-label {
+    color: #212529;
+    font-weight: 600;
+}
+
+/* Estilos para tabelas */
+.table-dark {
+    background-color: #212529;
+}
+
+.table-dark th {
+    border-color: #dc3545;
+    color: #dc3545;
+    font-weight: bold;
+}
+
+.table-dark td {
+    border-color: #495057;
+}
+
+.table-hover tbody tr:hover {
+    background-color: #343a40;
+}
+
+/* Estilos para a navbar */
+.navbar-brand {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #dc3545 !important;
+}
+
+.navbar-dark .navbar-nav .nav-link {
+    color: #f8f9fa !important;
+    transition: color 0.3s ease-in-out;
+}
+
+.navbar-dark .navbar-nav .nav-link:hover,
+.navbar-dark .navbar-nav .nav-link.active {
+    color: #dc3545 !important;
+}
+
+/* Estilos para listas */
+.list-group-item {
+    border-left: 4px solid #dc3545;
+    background-color: #f8f9fa;
+}
+
+.list-group-item:first-child {
+    border-top-left-radius: 4px;
+}
+
+.list-group-item:last-child {
+    border-bottom-left-radius: 4px;
+}
+
+/* Estilos gerais para responsividade */
+@media (max-width: 768px) {
+    .hero-section {
+        min-height: 300px;
+    }
+
+    .hero-section h2 {
+        font-size: 1.75rem;
+    }
+
+    .display-4 {
+        font-size: 2rem;
+    }
+
+    .product-card {
+        margin-bottom: 20px;
+    }
+}
+
+/* Estilos para cards com informações */
+.card-header {
+    border-bottom: 2px solid #dc3545;
+    font-weight: bold;
+}
+
+.card-body {
+    padding: 1.5rem;
+}
+
+/* Estilos para botões */
+.btn {
+    font-weight: 600;
+    transition: all 0.3s ease-in-out;
+}
+
+.btn-danger {
+    background-color: #dc3545;
+    border-color: #dc3545;
+}
+
+.btn-danger:hover {
+    background-color: #c82333;
+    border-color: #bd2130;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(220, 53, 69, 0.4);
+}
+
+.btn-lg {
+    padding: 0.75rem 1.5rem;
+    font-size: 1.1rem;
+}
+
+/* Estilos para inputs numéricos */
+input[type="number"] {
+    text-align: center;
+}
+
+/* Estilos para seções */
+section {
+    padding: 20px 0;
+}
+
+/* Estilos para títulos */
+h1 {
+    font-weight: bold;
+    color: #dc3545;
+}
+
+h2 {
+    font-weight: bold;
+    color: #dc3545;
+}
+
+h5 {
+    font-weight: 600;
+}
+
+/* Estilos para footer */
+footer {
+    background-color: #212529;
+    color: #f8f9fa;
+    border-top: 2px solid #dc3545;
+}
+
+footer p {
+    margin: 0;
+}
