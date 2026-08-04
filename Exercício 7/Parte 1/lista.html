@@ -1,1 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pânico 7 - Inventário</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Creepster&family=Nosifer&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="bg-dark text-light">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-black border-bottom border-danger">
+        <div class="container">
+            <a class="navbar-brand text-danger" href="index.html" style="font-family: 'Nosifer', cursive;">PÂNICO 7</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Início</a></li>
+                    <li class="nav-item"><a class="nav-link" href="cadastro.html">Cadastro</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="lista.html">Lista</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contato.html">Contato</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container my-5">
+        <h2 class="text-danger mb-4" style="font-family: 'Creepster', cursive; font-size: 3rem;">Inventário de Sobrevivência</h2>
+        <div class="table-responsive">
+            <table class="table table-dark table-hover border-danger">
+                <thead class="text-danger">
+                    <tr>
+                        <th>ID</th>
+                        <th>Nome</th>
+                        <th>Categoria</th>
+                        <th>Preço</th>
+                        <th>Descrição</th>
+                        <th>Ações</th>
+                    </tr>
+                </thead>
+                <tbody id="productTableBody"></tbody>
+            </table>
+        </div>
+        <div id="emptyMessage" class="text-center py-5 d-none">
+            <h4 class="text-secondary">Nenhum item cadastrado... ainda.</h4>
+            <a href="cadastro.html" class="btn btn-outline-danger mt-3">Cadastrar Primeiro Item</a>
+        </div>
+    </div>
+    <script src="js/script.js"></script>
+    <script>document.addEventListener('DOMContentLoaded', displayProducts );</script>
+</body>
+</html>
 
