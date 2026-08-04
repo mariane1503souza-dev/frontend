@@ -8,7 +8,7 @@ Este é o projeto final do Exercício 7, desenvolvido como um sistema completo d
 - **Busca Inteligente**: Filtre produtos por nome em tempo real.
 - **Layout Responsivo**: Experiência otimizada para Desktop, Tablet e Mobile utilizando Bootstrap 5.
 ## Tecnologias Utilizadas
-HTML5: Estruturação semântica.
+- **HTML5**: Estruturação semântica.
 - **CSS3**: Estilização personalizada com variáveis e animações.
 - **JavaScript (ES6+)**: Lógica de negócios, manipulação de DOM e API de Storage.
 - **Bootstrap 5**: Framework CSS para componentes e grid responsivo.
