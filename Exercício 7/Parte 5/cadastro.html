@@ -1,1 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pânico 7 - Cadastro</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Creepster&family=Nosifer&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="bg-dark text-light">
+    <header class="bg-black border-bottom border-danger">
+        <nav class="navbar navbar-expand-lg navbar-dark container">
+            <a class="navbar-brand text-danger" href="index.html" style="font-family: 'Nosifer', cursive;">PÂNICO 7</a>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Início</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="cadastro.html">Cadastro</a></li>
+                    <li class="nav-item"><a class="nav-link" href="lista.html">Lista</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contato.html">Contato</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <div class="container my-4">
+        <div class="row">
+            <main class="col-lg-9 mb-4">
+                <div class="card bg-black border-danger text-light shadow-lg">
+                    <div class="card-body p-4">
+                        <h2 class="text-danger mb-4" style="font-family: 'Creepster', cursive;">Novo Cadastro</h2>
+                        <form id="formCadastro">
+                            <div class="mb-3"><label class="form-label">Nome</label><input type="text" id="nome" class="form-control bg-dark text-light border-secondary" required></div>
+                            <div class="row mb-3">
+                                <div class="col-md-6"><label class="form-label">Categoria</label><select id="categoria" class="form-select bg-dark text-light border-secondary"><option value="Armas">Armas</option><option value="Vestuário">Vestuário</option></select></div>
+                                <div class="col-md-6"><label class="form-label">Preço</label><input type="number" step="0.01" id="preco" class="form-control bg-dark text-light border-secondary" required></div>
+                            </div>
+                            <div class="row mb-3">
+                                <div class="col-md-6"><label class="form-label">Estoque</label><input type="number" id="estoque" class="form-control bg-dark text-light border-secondary" required></div>
+                                <div class="col-md-6"><label class="form-label">Status</label><select id="status" class="form-select bg-dark text-light border-secondary"><option value="Disponível">Disponível</option><option value="Esgotado">Esgotado</option></select></div>
+                            </div>
+                            <div class="mb-4"><label class="form-label">Descrição</label><textarea id="descricao" class="form-control bg-dark text-light border-secondary" rows="3"></textarea></div>
+                            <button type="submit" class="btn btn-danger w-100 btn-lg">SALVAR</button>
+                        </form>
+                    </div>
+                </div>
+            </main>
+            <aside class="col-lg-3"><div class="alert alert-warning bg-dark text-warning border-warning">Erros podem ser fatais.</div></aside>
+        </div>
+    </div>
+    <script src="js/script.js"></script>
+</body>
+</html>
 
