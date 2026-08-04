@@ -1,1 +1,139 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contato - MercadoTech - Pânico 6 Edition</title>
+    <!-- Bootstrap CSS via CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <!-- CSS próprio -->
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+    <!-- Navbar Responsiva -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <strong>MercadoTech</strong> - Pânico 6
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="produtos.html">Produtos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="sobre.html">Sobre</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="contato.html">Contato</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="carrinho.html">Carrinho</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <header class="bg-dark text-white text-center py-4">
+        <div class="container">
+            <h1>Entre em Contato Conosco</h1>
+            <p class="lead">Estamos aqui para ajudar você a qualquer hora</p>
+        </div>
+    </header>
+
+    <main class="container my-5">
+        <section class="row">
+            <div class="col-12 col-lg-8 mx-auto">
+                <h2 class="mb-4 text-center">Formulário de Contato</h2>
+                <form class="contact-form">
+                    <div class="mb-3">
+                        <label for="nome" class="form-label">Nome Completo</label>
+                        <input type="text" class="form-control" id="nome" placeholder="Seu nome" required>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="email" class="form-label">Email</label>
+                        <input type="email" class="form-control" id="email" placeholder="seu@email.com" required>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="telefone" class="form-label">Telefone</label>
+                        <input type="tel" class="form-control" id="telefone" placeholder="(11) 99999-9999">
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="assunto" class="form-label">Assunto</label>
+                        <select class="form-select" id="assunto" required>
+                            <option value="">Selecione um assunto</option>
+                            <option value="duvida">Dúvida sobre Produto</option>
+                            <option value="pedido">Acompanhamento de Pedido</option>
+                            <option value="reclamacao">Reclamação</option>
+                            <option value="sugestao">Sugestão</option>
+                            <option value="outro">Outro</option>
+                        </select>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="mensagem" class="form-label">Mensagem</label>
+                        <textarea class="form-control" id="mensagem" rows="5" placeholder="Digite sua mensagem aqui..." required></textarea>
+                    </div>
+
+                    <button type="submit" class="btn btn-danger btn-lg w-100">Enviar Mensagem</button>
+                </form>
+
+                <hr class="my-5">
+
+                <h2 class="mb-4 text-center">Informações de Contato</h2>
+                <div class="row">
+                    <div class="col-12 col-md-4 text-center mb-4">
+                        <div class="card bg-dark text-white">
+                            <div class="card-body">
+                                <h5 class="card-title text-danger">Telefone</h5>
+                                <p class="card-text">(11) 3000-0000</p>
+                                <p class="card-text">Seg-Sex: 9h às 18h</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-md-4 text-center mb-4">
+                        <div class="card bg-dark text-white">
+                            <div class="card-body">
+                                <h5 class="card-title text-danger">Email</h5>
+                                <p class="card-text">contato@mercadotech.com</p>
+                                <p class="card-text">Resposta em até 24h</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-md-4 text-center mb-4">
+                        <div class="card bg-dark text-white">
+                            <div class="card-body">
+                                <h5 class="card-title text-danger">Endereço</h5>
+                                <p class="card-text">Rua da Tecnologia, 666</p>
+                                <p class="card-text">São Paulo, SP - Brasil</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-dark text-white text-center py-3 mt-5">
+        <div class="container">
+            <p>&copy; 2026 MercadoTech - Pânico 6 Edition. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS via CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+</body>
+</html>
 
