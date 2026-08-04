@@ -1,1 +1,78 @@
+/* PÂNICO 7 - ESTILO FINAL POLIDO */
+:root {
+    --blood-red: #b30000;
+    --dark-void: #0a0a0a;
+    --ghost-white: #f8f9fa;
+    --shadow-danger: rgba(255, 0, 0, 0.3);
+}
+
+body {
+    background-color: var(--dark-void) !important;
+    color: var(--ghost-white);
+    font-family: 'Inter', sans-serif;
+    overflow-x: hidden;
+}
+
+/* Navbar */
+.navbar {
+    background-color: #000 !important;
+    padding: 1rem 0;
+}
+
+.navbar-brand {
+    font-size: 2rem;
+    letter-spacing: 3px;
+    text-shadow: 0 0 10px var(--blood-red);
+}
+
+.nav-link {
+    text-transform: uppercase;
+    font-weight: 600;
+    margin: 0 10px;
+    position: relative;
+}
+
+.nav-link.active {
+    color: var(--blood-red) !important;
+}
+
+/* Botões */
+.btn-danger {
+    background-color: var(--blood-red);
+    border: none;
+    border-radius: 0;
+    padding: 10px 25px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.btn-danger:hover {
+    background-color: #ff0000;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(255, 0, 0, 0.5);
+}
+
+/* Cards */
+.card {
+    border-radius: 0;
+    transition: all 0.3s ease;
+}
+
+.card.bg-black:hover {
+    border-color: #ff0000 !important;
+    box-shadow: 0 0 20px var(--shadow-danger);
+}
+
+/* Inputs */
+.form-control, .form-select {
+    border-radius: 0;
+    padding: 12px;
+}
+
+.form-control:focus {
+    background-color: #111;
+    color: white;
+    border-color: var(--blood-red);
+    box-shadow: 0 0 0 0.25rem var(--shadow-danger);
+}
 
